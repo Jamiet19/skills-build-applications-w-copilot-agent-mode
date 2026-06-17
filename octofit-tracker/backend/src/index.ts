@@ -1,6 +1,7 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
+import apiRoutes from './routes';
 
 const app = express();
 const PORT = 8000;
@@ -22,6 +23,12 @@ mongoose
 
 app.get('/api/', (_req, res) => {
   res.json({ message: 'OctoFit Tracker API', baseUrl });
+});
+
+app.use('/api', apiRoutes);
+
+app.use((err: Error, _req: express.Request, res: express.Response, _next: express.NextFunction) => {
+  res.status(500).json({ message: err.message });
 });
 
 app.listen(PORT, () => {
