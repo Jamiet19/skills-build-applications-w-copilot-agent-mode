@@ -1,7 +1,7 @@
 import express from 'express';
-import mongoose from 'mongoose';
 import cors from 'cors';
 import apiRoutes from './routes';
+import { connectToDatabase } from './database';
 
 const app = express();
 const PORT = 8000;
@@ -14,11 +14,7 @@ const baseUrl = codespaceName
 app.use(cors());
 app.use(express.json());
 
-const MONGODB_URI = 'mongodb://localhost:27017/octofit_db';
-
-mongoose
-  .connect(MONGODB_URI)
-  .then(() => console.log('Connected to MongoDB (octofit_db)'))
+connectToDatabase()
   .catch((err) => console.error('MongoDB connection error:', err));
 
 app.get('/api/', (_req, res) => {
