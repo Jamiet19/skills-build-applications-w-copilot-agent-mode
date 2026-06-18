@@ -1,7 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import apiRoutes from './routes';
-import { connectToDatabase } from './database';
+import { connectToDatabase } from './config/database';
 
 const app = express();
 const PORT = 8000;
