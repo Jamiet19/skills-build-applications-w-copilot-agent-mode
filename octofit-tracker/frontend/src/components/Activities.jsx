@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
 import { fetchCollection } from '../api'
 
+const activitiesEndpoint = '/api/activities/'
+
 function formatUser(user) {
   if (!user) {
     return 'Unassigned user'
@@ -19,7 +21,7 @@ function Activities() {
 
     async function loadActivities() {
       try {
-        const data = await fetchCollection('activities')
+        const data = await fetchCollection(activitiesEndpoint)
         if (!ignore) {
           setActivities(data)
           setStatus('ready')

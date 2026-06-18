@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
 import { fetchCollection } from '../api'
 
+const leaderboardEndpoint = '/api/leaderboard/'
+
 function formatName(value) {
   if (!value) {
     return 'Unassigned'
@@ -19,7 +21,7 @@ function Leaderboard() {
 
     async function loadLeaderboard() {
       try {
-        const data = await fetchCollection('leaderboard')
+        const data = await fetchCollection(leaderboardEndpoint)
         if (!ignore) {
           setEntries(data)
           setStatus('ready')
