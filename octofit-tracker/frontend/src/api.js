@@ -28,8 +28,9 @@ export function normalizeCollectionResponse(data) {
   return []
 }
 
-export async function fetchCollection(endpointPath) {
-  const response = await fetch(`${apiOrigin}${endpointPath}`)
+export async function fetchCollection(endpoint) {
+  const requestUrl = endpoint.startsWith('http') ? endpoint : `${apiOrigin}${endpoint}`
+  const response = await fetch(requestUrl)
 
   if (!response.ok) {
     throw new Error(`Request failed with ${response.status}`)
