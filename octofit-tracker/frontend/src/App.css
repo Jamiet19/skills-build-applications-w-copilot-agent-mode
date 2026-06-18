@@ -1,0 +1,164 @@
+.app-shell {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  min-height: 100svh;
+  text-align: left;
+}
+
+.sidebar {
+  background: #183c34;
+  color: #f8faf7;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding: 28px;
+}
+
+.brand-lockup {
+  align-items: center;
+  display: flex;
+  gap: 14px;
+}
+
+.brand-lockup img {
+  background: #f8faf7;
+  border-radius: 8px;
+  height: 58px;
+  object-fit: contain;
+  padding: 6px;
+  width: 58px;
+}
+
+.brand-lockup h2,
+.brand-lockup p {
+  color: inherit;
+  margin: 0;
+}
+
+.nav-link {
+  border-radius: 8px;
+  color: #dce8df;
+  font-weight: 700;
+  padding: 10px 12px;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  background: #f2c14e;
+  color: #183c34;
+}
+
+.api-chip {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  font-family: var(--mono);
+  font-size: 12px;
+  line-height: 1.45;
+  margin-top: auto;
+  overflow-wrap: anywhere;
+  padding: 12px;
+}
+
+.main-panel {
+  background:
+    linear-gradient(135deg, rgba(242, 193, 78, 0.18), transparent 34%),
+    #f6f7f1;
+  padding: 34px;
+}
+
+.content-section {
+  margin: 0 auto;
+  max-width: 1040px;
+}
+
+.section-heading {
+  margin-bottom: 24px;
+}
+
+.eyebrow {
+  color: #c04f2f;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0;
+  margin: 0 0 6px;
+  text-transform: uppercase;
+}
+
+.data-card,
+.data-table-wrap,
+.leaderboard-row {
+  background: #ffffff;
+  border: 1px solid #dfe5d8;
+  border-radius: 8px;
+  box-shadow: 0 12px 30px rgba(24, 60, 52, 0.08);
+}
+
+.data-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+}
+
+.data-card h2,
+.leaderboard-row h2 {
+  font-size: 20px;
+  margin: 0;
+}
+
+.member-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.leaderboard-list {
+  display: grid;
+  gap: 12px;
+}
+
+.leaderboard-row {
+  align-items: center;
+  display: grid;
+  gap: 18px;
+  grid-template-columns: 64px minmax(0, 1fr) auto;
+  padding: 18px;
+}
+
+.rank {
+  align-items: center;
+  background: #183c34;
+  border-radius: 8px;
+  color: #f8faf7;
+  display: inline-flex;
+  font-weight: 800;
+  height: 44px;
+  justify-content: center;
+  width: 54px;
+}
+
+.status-message {
+  padding: 34px;
+}
+
+@media (max-width: 800px) {
+  .app-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    padding: 20px;
+  }
+
+  .main-panel {
+    padding: 20px;
+  }
+
+  .leaderboard-row {
+    grid-template-columns: 54px minmax(0, 1fr);
+  }
+
+  .leaderboard-row strong {
+    grid-column: 2;
+  }
+}

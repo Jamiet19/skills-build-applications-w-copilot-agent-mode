@@ -31,7 +31,7 @@ In this step, you will:
 > - Keep compatibility with paginated and array responses
 > ```
 
-### :keyboard: Activity: Run and verify the presentation tier
+### :keyboard: Activity: Run and verify the presentation tier 
 
 Run the React app with the Vite dev server (for example, `npm run dev`) and open port `5173`.
 
